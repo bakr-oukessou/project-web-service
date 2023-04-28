@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { RegisterRoutingModule } from './register-routing.module';
-import { RegisterComponent } from './register.component';
+import {RegisterRoutingModule} from './register-routing.module';
+import {RegisterComponent} from './register.component';
+import {FormsModule} from "@angular/forms";
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -11,7 +13,10 @@ import { RegisterComponent } from './register.component';
   ],
   imports: [
     CommonModule,
-    RegisterRoutingModule
+    RegisterRoutingModule,
+    FormsModule,
+    FontAwesomeModule
   ]
 })
-export class RegisterModule { }
+export class RegisterModule {
+}
