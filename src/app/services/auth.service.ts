@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {UserCreationDto} from "../dto/UserCreationDto";
+import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,14 @@ export class AuthService {
   constructor(private http: HttpClient) {
   }
 
-  public login(email: string, password: string) {
-    return this.http.post<string>(environment.apiURL + `/login`, {
-      email,
-      password
-    }).subscribe(res => this.setSession(res))
+  public login(email: string, password: string): Observable<boolean> {
+    this.http.post<string>(environment.apiURL + `/login`, {email, password})
+      .subscribe(res => {
+          this.setSession(res)
+          return of(true);
+        }
+      );
+    return of(false);
   }
 
   public register(user: UserCreationDto) {
