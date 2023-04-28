@@ -25,9 +25,15 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
+=======
+              "src/styles.css",
+              "../node_modules/bootstrap/dist/css/bootstrap.css",
+              "../node_modules/font-awesome/css/font-awesome.css"
+>>>>>>> 304591ab2503cae42b679afe57dcb5e5f9a2e768
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -55,7 +61,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -91,8 +103,14 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
+=======
+              "src/styles.css",
+              "../node_modules/bootstrap/dist/css/bootstrap.css",
+              "../node_modules/font-awesome/css/font-awesome.css"
+>>>>>>> 304591ab2503cae42b679afe57dcb5e5f9a2e768
             ],
             "scripts": []
           }

@@ -1,30 +1,34 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from "../services/auth.service";
+import {UserCreationDto} from "../dto/UserCreationDto";
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  username: string | undefined;
-  password: string | undefined;
+  email: string = '';
+  password: string = '';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  user: UserCreationDto = {} as UserCreationDto;
 
-  onSubmit() {
-    this.http.post('/api/login', { username: this.username, password: this.password })
-      .subscribe(
-        (response: any) => {
-          // Login successful
-          localStorage.setItem('token', response.token);
-          this.router.navigate(['/dashboard']);
-        },
-        (error) => {
-          // Login failed
-          console.error(error);
-          alert('Login failed. Please try again.');
-        }
-      );
+  constructor(private auth: AuthService, private router: Router) {
   }
+
+  login() {
+    this.auth.login(this.email, this.password).subscribe(res => {
+      if (res) {
+        this.router.navigateByUrl('/dashboard');
+      } else {
+        alert('Login failed');
+      }
+    })
+  }
+
+  createAccount() {
+    this.auth.register(this.user).subscribe();
+  }
+
 }
