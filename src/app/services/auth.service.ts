@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
+import {UserCreationDto} from "../dto/UserCreationDto";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,10 @@ export class AuthService {
   }
 
   public login(email: string, password: string) {
-    return this.http.post<string>(environment.apiURL + `/login`, {email, password}).subscribe(res => this.setSession);
+    return this.http.post<string>(environment.apiURL + `/login`, {
+      email,
+      password
+    }).subscribe(res => this.setSession(res))
   }
 
   public register(user: UserCreationDto) {
@@ -29,6 +33,10 @@ export class AuthService {
   }
 
   public logout() {
-    localStorage.removeItem("auth_token");
+    localStorage.removeItem(this.AUTH_TOKEN);
+  }
+
+  public isAuthenticated(): boolean {
+    return localStorage.getItem(this.AUTH_TOKEN) != null;
   }
 }
