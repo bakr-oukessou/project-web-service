@@ -19,12 +19,9 @@ export class RegisterComponent {
 
   login() {
     this.auth.login(this.email, this.password).subscribe(res => {
-      if (res) {
-        this.router.navigateByUrl('/dashboard');
-      } else {
-        alert('Login failed');
+        this.router.navigate(['/']);
       }
-    })
+    )
   }
 
   createAccount() {
