@@ -22,6 +22,7 @@ export class NewUserComponent {
   title:String="";
   status:String="";
   avatar_url:String="";
+  
   OnsubmitData(): void {
     this.usersService.CreatUsers({ "f_name":this.f_name,
     "l_name":this.l_name,"title":this.title,"status":this.status,"avatar_url":this.avatar_url}).subscribe({

@@ -4,7 +4,7 @@ import {CommonModule} from '@angular/common';
 import {RegisterRoutingModule} from './register-routing.module';
 import {RegisterComponent} from './register.component';
 import {FormsModule} from "@angular/forms";
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+// import {FontAwesomeModule} from '@fontawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     CommonModule,
     RegisterRoutingModule,
     FormsModule,
-    FontAwesomeModule
+    // FontAwesomeModule
   ]
 })
 export class RegisterModule {

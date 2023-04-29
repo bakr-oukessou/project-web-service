@@ -24,7 +24,7 @@ export class AuthService {
     return of(false);
   }
 
-  public register(user: UserCreationDto) {
+  public register(user:UserCreationDto) {
     return this.http.post<any>(environment.apiURL + `/register`, user);
   }
 

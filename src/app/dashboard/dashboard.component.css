@@ -23,7 +23,7 @@ body{margin-top:20px;
         transition-duration: 500ms;
         z-index: 1;
         border-radius: 15px;
-        -webkit-box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+        -webkit-box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.5);
         box-shadow: 0 0.25rem 1rem 0 rgba(47, 234, 156, 0.125);
     }
     .single_advisor_profile .advisor_thumb {
@@ -146,4 +146,7 @@ body{margin-top:20px;
     .single_advisor_profile:hover .single_advisor_details_info p,
     .single_advisor_profile:focus .single_advisor_details_info p {
         color: #ffffff;
+    }
+    a{
+     text-decoration: none;
     }
