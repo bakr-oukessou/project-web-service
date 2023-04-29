@@ -19,7 +19,7 @@ export class RegisterComponent {
 
   login() {
     this.auth.login(this.email, this.password).subscribe(res => {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/']);
       }
     )
   }

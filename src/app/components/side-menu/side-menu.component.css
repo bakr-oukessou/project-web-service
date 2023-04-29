@@ -42,7 +42,7 @@ a {
   justify-content: space-between;
   padding: 0 1rem;
   background-color: var(--white-color);
-  z-index: var(--z-fixed);
+  z-index: 10000;
   transition: .5s
 }
 
@@ -51,7 +51,7 @@ a {
   top: 0;
   left: 0;
   color: var(--first-color);
-  font-size: 4rem;
+  font-size: 3rem;
   cursor: pointer;
   z-index: 1000
 }
@@ -71,11 +71,11 @@ a {
 }
 
 .l-navbar {
-  position: absolute;
+  position: fixed;
   top: 60px;
   left: -30%;
   width: var(--nav-width);
-  height: 100vh;
+  height: calc(100vh - 60px);
   background-color: #e9fbff;
   padding: .5rem 1rem 0 0;
   transition: .5s;
@@ -160,3 +160,4 @@ a {
 .l-navbar{left: 0;padding: 1rem 1rem 0 0}
 .show{width: calc(var(--nav-width) + 156px)}
 .body-pd{padding-left: calc(var(--nav-width) + 188px)}} */
+
