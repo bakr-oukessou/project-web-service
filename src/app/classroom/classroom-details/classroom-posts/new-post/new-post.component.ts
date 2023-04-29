@@ -17,6 +17,6 @@ export class NewPostComponent {
 
   post() {
     this.content.classroom = this.route.snapshot.params['id'];
-    this.postsService.post(this.content);
+    this.postsService.newPost(this.content);
   }
 }
