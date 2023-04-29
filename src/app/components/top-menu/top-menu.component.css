@@ -22,7 +22,7 @@
       -webkit-transform: translateY(10px);
       transform: translateY(10px);
   }
-  
+
   .navbar-collapse ul li:hover a.nav-link:before {
       opacity: 1;
       -ms-transform: translateY(0px);
@@ -33,20 +33,21 @@
   }
   a.nav-link:after{
     opacity: 1;
-    height: 2px;    
+    height: 2px;
     border-bottom: #6c82ff 2px;
     bottom: -5px;
     left: 0;
     width: 100%;
     background: #6c82ff;
   }
-  
-  
+
   /* General Styles*/
   .body {
     top: 0;
     z-index: 11;
     position: sticky;
-    margin-left: 180px;
-    
+  }
+
+  nav{
+    padding: 10px 20px;
   }

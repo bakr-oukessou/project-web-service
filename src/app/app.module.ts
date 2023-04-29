@@ -11,13 +11,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { BaseComponent } from './components/base/base.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideMenuComponent,
-    TopMenuComponent
+    TopMenuComponent,
+    NotFoundComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,
