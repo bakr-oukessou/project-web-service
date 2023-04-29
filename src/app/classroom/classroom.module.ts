@@ -9,6 +9,7 @@ import { ClassroomDetailsComponent } from './classroom-details/classroom-details
 import { ClassroomPostsComponent } from './classroom-details/classroom-posts/classroom-posts.component';
 import { ClassroomUsersComponent } from './classroom-details/classroom-users/classroom-users.component';
 import { NewPostComponent } from './classroom-details/classroom-posts/new-post/new-post.component';
+import { JoinClassroomComponent } from './join-classroom/join-classroom.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NewPostComponent } from './classroom-details/classroom-posts/new-post/n
     ClassroomDetailsComponent,
     ClassroomPostsComponent,
     ClassroomUsersComponent,
-    NewPostComponent
+    NewPostComponent,
+    JoinClassroomComponent
   ],
   imports: [
     CommonModule,

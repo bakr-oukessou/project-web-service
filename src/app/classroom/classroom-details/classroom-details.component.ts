@@ -1,15 +1,23 @@
-import {Component} from '@angular/core';
-import {ClassroomService} from "../../services/classroom.service";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-classroom-details',
   templateUrl: './classroom-details.component.html',
   styleUrls: ['./classroom-details.component.css']
 })
-export class ClassroomDetailsComponent {
+export class ClassroomDetailsComponent implements OnInit {
 
+  id: string | null = "";
 
-  constructor(private classroomService: ClassroomService) {
+  constructor(private route: ActivatedRoute) {
+  }
+
+  ngOnInit(): void {
+    if (this.route.snapshot.firstChild == null) return;
+    if (this.route.snapshot.firstChild.firstChild == null) return;
+    this.id = this.route.snapshot.firstChild.firstChild.params['id'];
+
   }
 
 

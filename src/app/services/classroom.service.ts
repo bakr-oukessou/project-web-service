@@ -44,4 +44,10 @@ export class ClassroomService {
     const headers: { Authorization: string } = {'Authorization': 'Bearer ' + this.auth.getAuthToken()};
     return this.http.get<ClassroomDto[]>(environment.apiURL + '/classrooms/' + classroomId, {headers});
   }
+
+  getInvites() {
+    const headers: { Authorization: string } = {'Authorization': 'Bearer ' + this.auth.getAuthToken()};
+    return this.http.get<ClassroomDto[]>(environment.apiURL + '/classrooms/invites', {headers});
+
+  }
 }
