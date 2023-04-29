@@ -12,8 +12,14 @@ export class PostsService {
   constructor(private http: HttpClient, private auth: AuthService) {
 
   }
+
   newPost(content: PostDto) {
     const headers: { Authorization: string } = {'Authorization': 'Bearer ' + this.auth.getAuthToken()};
     return this.http.post<PostDto>(environment.apiURL, content, {headers});
+  }
+
+  getPosts(classroom: number) {
+    const headers: { Authorization: string } = {'Authorization': 'Bearer ' + this.auth.getAuthToken()};
+    return this.http.get<PostDto[]>(environment.apiURL + 'classroom/' + classroom, {headers});
   }
 }

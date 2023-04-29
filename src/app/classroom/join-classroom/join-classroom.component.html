@@ -1,4 +1,4 @@
-<div *ngFor="let classroom in classrooms">
+<div *ngFor="let classroom of classrooms">
   <h1>{{classroom.name}}</h1>
   <button (click)="joinClassroom(classroom.id)">Join</button>
 </div>
