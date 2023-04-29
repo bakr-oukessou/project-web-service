@@ -1,9 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {PostDto} from "../dto/PostDto";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostsService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+
+  }
+
+  post(content: PostDto) {
+
+  }
 }
