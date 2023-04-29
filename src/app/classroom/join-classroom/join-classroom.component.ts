@@ -15,7 +15,7 @@ export class JoinClassroomComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.classroomService.getClassrooms().subscribe(classrooms => this.classrooms = classrooms);
+    this.classroomService.getInvites().subscribe(classrooms => this.classrooms = classrooms);
   }
 
   joinClassroom(id: number) {
