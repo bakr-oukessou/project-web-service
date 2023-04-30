@@ -37,11 +37,17 @@ export class ClassroomService {
 
   join(classroomId: number) {
     const headers: { Authorization: string } = {'Authorization': 'Bearer ' + this.auth.getAuthToken()};
-    return this.http.post<ClassroomDto>(environment.apiURL + '/classrooms/invite/' + classroomId, null, {headers});
+    return this.http.post<ClassroomDto>(environment.apiURL + '/classrooms/join/' + classroomId, null, {headers});
   }
 
   getUserClassrooms(classroomId: number) {
     const headers: { Authorization: string } = {'Authorization': 'Bearer ' + this.auth.getAuthToken()};
     return this.http.get<ClassroomDto[]>(environment.apiURL + '/classrooms/' + classroomId, {headers});
+  }
+
+  getInvites() {
+    const headers: { Authorization: string } = {'Authorization': 'Bearer ' + this.auth.getAuthToken()};
+    return this.http.get<ClassroomDto[]>(environment.apiURL + '/classrooms/invites', {headers});
+
   }
 }
