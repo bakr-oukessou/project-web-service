@@ -19,6 +19,6 @@ export class JoinClassroomComponent implements OnInit {
   }
 
   joinClassroom(id: number) {
-    this.classroomService.join(id);
+    this.classroomService.join(id).subscribe();
   }
 }

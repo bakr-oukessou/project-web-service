@@ -15,10 +15,7 @@ export class ClassroomDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.route.snapshot.firstChild == null) return;
-    if (this.route.snapshot.firstChild.firstChild == null) return;
-    this.id = this.route.snapshot.firstChild.firstChild.params['id'];
+    this.id = this.route.snapshot.firstChild.params['id'];
 
   }
-
-
 }

@@ -15,11 +15,11 @@ export class PostsService {
 
   newPost(content: PostDto) {
     const headers: { Authorization: string } = {'Authorization': 'Bearer ' + this.auth.getAuthToken()};
-    return this.http.post<PostDto>(environment.apiURL, content, {headers});
+    return this.http.post<PostDto>(environment.apiURL+'/posts', content, {headers});
   }
 
   getPosts(classroom: number) {
     const headers: { Authorization: string } = {'Authorization': 'Bearer ' + this.auth.getAuthToken()};
-    return this.http.get<PostDto[]>(environment.apiURL + 'classroom/' + classroom, {headers});
+    return this.http.get<PostDto[]>(environment.apiURL + '/posts/classroom/' + classroom, {headers});
   }
 }

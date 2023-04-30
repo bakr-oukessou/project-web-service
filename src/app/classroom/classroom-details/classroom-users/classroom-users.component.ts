@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ClassroomService} from "../../../services/classroom.service";
 import {ActivatedRoute} from "@angular/router";
+import {UsersService} from "../../../services/users.service";
+import {UserDto} from "../../../dto/UserDto";
 
 @Component({
   selector: 'app-classroom-users',
@@ -9,13 +10,16 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ClassroomUsersComponent implements OnInit {
 
-  id: string | null = "";
+  id: number = 0;
 
-  constructor(private classroomService: ClassroomService, private route: ActivatedRoute) {
+  users: UserDto[] = [];
+
+  constructor(private usersService: UsersService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.params['id'];
+    this.usersService.getUsersOfClassroom(this.id).subscribe(users => this.users = users);
   }
 
 }

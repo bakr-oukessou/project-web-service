@@ -1,4 +1,5 @@
-<app-new-post></app-new-post>
+<input type="text" [(ngModel)]="content.content">
+<button (click)="post()">Post</button>
 
 <div>
   <div *ngFor="let post of posts">

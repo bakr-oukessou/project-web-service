@@ -19,6 +19,12 @@ export class ClassroomPostsComponent implements OnInit {
   ngOnInit(): void {
     this.classroomId = this.route.snapshot.params['id'];
     this.postsService.getPosts(this.classroomId).subscribe(posts => this.posts = posts)
+  }
 
+  content: PostDto = {} as PostDto;
+
+  post() {
+    this.content.classroom_id = this.route.snapshot.params['id'];
+    this.postsService.newPost(this.content).subscribe(post => this.posts.push(post));
   }
 }

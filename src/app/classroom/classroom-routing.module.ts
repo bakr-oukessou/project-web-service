@@ -6,8 +6,10 @@ import {ClassroomDetailsComponent} from "./classroom-details/classroom-details.c
 import {JoinClassroomComponent} from "./join-classroom/join-classroom.component";
 import {ClassroomPostsComponent} from "./classroom-details/classroom-posts/classroom-posts.component";
 import {ClassroomUsersComponent} from "./classroom-details/classroom-users/classroom-users.component";
+import {InviteUserComponent} from "./classroom-details/invite-user/invite-user.component";
 
 const routes: Routes = [
+  {path: '', component: ClassroomComponent, pathMatch: "full"},
   {path: 'new', component: NewClassroomComponent},
   {path: 'join', component: JoinClassroomComponent},
   {
@@ -15,10 +17,10 @@ const routes: Routes = [
     children: [
       {path: 'posts/:id', component: ClassroomPostsComponent},
       {path: 'users/:id', component: ClassroomUsersComponent},
+      {path: 'invite/:id', component: InviteUserComponent},
       {path: ':id', redirectTo: 'posts/:id', pathMatch: "full"}
     ]
-  },
-  {path: '', component: ClassroomComponent, pathMatch: "full"}
+  }
 ];
 
 @NgModule({
