@@ -16,7 +16,7 @@ export class NewClassroomComponent {
 
 
   createClassroom() {
-    this.classroomService.createClassroom(this.classroom);
+    this.classroomService.createClassroom(this.classroom).subscribe();
   }
 
 }
